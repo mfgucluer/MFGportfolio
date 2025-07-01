@@ -199,13 +199,58 @@ img {
   flex-direction: column;
 }
 .home__social-icon {
-  width: max-content;
-  margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
-  color: var(--second-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  background: #fff;
+  border-radius: 30px;
+  padding: 8px 18px;
+  margin-right: 16px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s, background 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
+
+.home__social-linkedin {
+  color: #0a66c2;
+  border-color: #0a66c2;
+}
+.home__social-github {
+  color: #171515;
+  border-color: #171515;
+}
+
 .home__social-icon:hover {
-  color: var(--first-color);
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 6px 24px rgba(44, 62, 80, 0.18);
+  background: #f4f8ff;
+}
+
+.home__social-linkedin:hover {
+  color: #fff;
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+.home__social-github:hover {
+  color: #fff;
+  background: #171515;
+  border-color: #171515;
+}
+
+.home__social-icon i {
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.home__social-icon span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-left: 4px;
 }
 .home__img {
   position: absolute;
@@ -232,6 +277,30 @@ img {
 }
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact butonu için özel animasyonlu stil */
+.button--mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, var(--first-color) 60%, #4f8cff 100%);
+  box-shadow: 0 4px 24px rgba(79, 140, 255, 0.15);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+.button--mail i {
+  font-size: 1.3em;
+  transition: transform 0.3s;
+}
+.button--mail:hover {
+  background: linear-gradient(90deg, #4f8cff 0%, var(--first-color) 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(79, 140, 255, 0.25);
+}
+.button--mail:hover i {
+  transform: translateX(6px) scale(1.1);
 }
 
 /* ===== ABOUT =====*/
