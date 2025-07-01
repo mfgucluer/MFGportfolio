@@ -377,18 +377,32 @@ img {
 
 /* ===== WORK =====*/
 .work__container {
-  row-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
 }
-.work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
-  overflow: hidden;
+.work__block {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  padding: 2rem 2.2rem;
+  min-width: 280px;
+  max-width: 400px;
+  flex: 1 1 320px;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  opacity: 1;
+  transform: none;
 }
-.work__img img {
-  transition: 1s;
+.work__block:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(44,62,80,0.13);
 }
-.work__img img:hover {
-  transform: scale(1.1);
+.work__header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--second-color);
+  margin-bottom: 0.7rem;
 }
 
 /* ===== CONTACT =====*/
@@ -433,6 +447,72 @@ img {
 }
 .footer__copy {
   font-size: var(--smaller-font-size);
+}
+
+/* ===== EDUCATION =====*/
+.education__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.education__content {
+  max-width: 60%;
+}
+.education__university {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--second-color);
+  margin-bottom: 0.2rem;
+}
+.education__degree {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.education__details {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #333;
+  font-size: 1rem;
+}
+.education__gpa {
+  font-weight: 600;
+  color: var(--first-color);
+}
+.education__meta {
+  text-align: right;
+  min-width: 160px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--second-color);
+}
+.education__location {
+  display: block;
+}
+.education__date {
+  display: block;
+  margin-top: 0.2rem;
+}
+@media screen and (max-width: 768px) {
+  .education__container {
+    flex-direction: column;
+    padding: 1.2rem 1rem;
+  }
+  .education__content, .education__meta {
+    max-width: 100%;
+    text-align: left;
+  }
+  .education__meta {
+    margin-top: 1rem;
+    text-align: left;
+  }
 }
 
 /* ===== MEDIA QUERIES=====*/
@@ -551,5 +631,83 @@ img {
   }
   .home__img {
     width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .work__container {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .work__block {
+    max-width: 100%;
+    min-width: unset;
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+/* ===== EXPERIENCE ===== */
+.experience__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.experience__block {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  padding: 2rem 2.2rem;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+.experience__block.sr .sr-show {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.experience__block:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+}
+.experience__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--second-color);
+  margin-bottom: 0.2rem;
+  gap: 1rem;
+}
+.experience__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.7rem;
+  gap: 1rem;
+}
+.experience__role {
+  font-weight: 600;
+  color: var(--first-color);
+}
+.experience__date {
+  font-size: 0.98rem;
+  color: #888;
+}
+.experience__desc {
+  font-size: 1.02rem;
+  color: #222;
+  margin-top: 0.2rem;
+}
+@media screen and (max-width: 768px) {
+  .experience__container {
+    gap: 1.2rem;
+  }
+  .experience__block {
+    padding: 1.2rem 0.8rem;
+  }
+  .experience__header, .experience__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 }
