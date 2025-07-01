@@ -58,3 +58,5 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 sr.reveal('.education__container', {});
 sr.reveal('.education__content, .education__meta', {delay: 300});
 sr.reveal('.experience__block', {interval: 200});
+sr.reveal('.contact__info-box', {interval: 200});
+sr.reveal('.work__block-animate', {interval: 200});
